@@ -5,7 +5,13 @@ A lightweight Linux-based ETL (Extract, Transform, Load) pipeline project design
 ---
 
 ## 📁 Project Structure
+
 log-etl-pipeline-linux/ ├── rawlogs/ # Contains raw access log file ├── data/ # Cleaned logs & backup.sql ├── scripts/ # Bash & Python scripts for ETL ├── test_read_log.py # Simple log reader script ├── requirements.txt # Python dependencies └── README.md # Project overview
+
+yaml
+Copy
+Edit
+
 ---
 
 ## 🚀 What It Does
@@ -22,12 +28,14 @@ log-etl-pipeline-linux/ ├── rawlogs/ # Contains raw access log file ├─
 ### 1. Prepare Logs
 
 ```bash
-cat scripts/access_temp.log | grep " 200 " | grep -viE 'bot|c' > data/cleaned_log.log '
+cat scripts/access_temp.log | grep " 200 " | grep -viE 'bot|c' > data/cleaned_log.log
 2. Run the Python ETL Script
-
+bash
+Copy
+Edit
 python scripts/etl_to_postgres.py
-
 ➡️ Make sure PostgreSQL is running and a table web_logs exists in the log_db database.
+
 📦 Requirements
 Python 3.x
 
@@ -35,21 +43,31 @@ PostgreSQL
 
 Python libraries:
 psycopg2
-install them with:
 
+Install them with:
+
+bash
+Copy
+Edit
 pip install -r requirements.txt
 🛡 .gitignore
-
+bash
+Copy
+Edit
 data/logs.db
 *.pyc
 __pycache__/
 access_temp.log
 cleaned_logs/
-
 📄 License
 MIT License
 
 Built with ❤️ by Sowmya Ravuri
+
+yaml
+Copy
+Edit
+
 
 
 
